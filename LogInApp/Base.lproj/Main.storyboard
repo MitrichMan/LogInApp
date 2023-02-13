@@ -19,17 +19,23 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="4s2-PJ-Eki">
                                 <rect key="frame" x="80" y="344" width="233" height="128"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0B1-rm-VMw">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="0B1-rm-VMw">
                                         <rect key="frame" x="0.0" y="0.0" width="233" height="34"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="username"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="3kM-Mc-e32"/>
+                                        </connections>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qO6-lW-Q8j">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="qO6-lW-Q8j">
                                         <rect key="frame" x="0.0" y="49" width="233" height="34"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="password"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="nBP-ce-KoP"/>
+                                        </connections>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8C0-Fm-XA0">
                                         <rect key="frame" x="0.0" y="98" width="233" height="30"/>
@@ -45,7 +51,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="logInButtonTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="hff-nt-ZWR"/>
-                                            <segue destination="c86-4Q-5Ya" kind="presentation" modalPresentationStyle="fullScreen" id="cYL-sj-vLs"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -88,6 +93,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="qO6-lW-Q8j" id="3xw-wm-aM2"/>
                         <outlet property="userNameTextField" destination="0B1-rm-VMw" id="sF8-WB-kf4"/>
+                        <segue destination="c86-4Q-5Ya" kind="presentation" identifier="logIn" modalPresentationStyle="fullScreen" id="sSN-tr-OAT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -150,6 +156,7 @@
                             <constraint firstItem="9th-7u-0NH" firstAttribute="centerX" secondItem="b5Z-YS-sDL" secondAttribute="centerX" id="zrs-MW-9zL"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="CxN-0f-dz4"/>
                     <connections>
                         <outlet property="gradientView" destination="bva-Vz-zYG" id="GtK-6s-IiR"/>
                         <outlet property="welcomeLabel" destination="XKO-h9-XdN" id="ZMp-nD-6Xr"/>
