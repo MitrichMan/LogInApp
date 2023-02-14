@@ -130,7 +130,7 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G9M-aM-oz8">
-                                <rect key="frame" x="159.66666666666666" y="553.66666666666663" width="74" height="36"/>
+                                <rect key="frame" x="159.66666666666666" y="552.66666666666663" width="74" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Log Out">
@@ -146,7 +146,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="G9M-aM-oz8" secondAttribute="trailing" constant="125" id="1NP-Gv-5tR"/>
                             <constraint firstItem="9th-7u-0NH" firstAttribute="top" secondItem="PlX-Hj-NSe" secondAttribute="top" constant="80" id="J15-h2-V1L"/>
-                            <constraint firstItem="G9M-aM-oz8" firstAttribute="top" secondItem="9th-7u-0NH" secondAttribute="bottom" constant="255" id="Qtm-Lv-BKz"/>
+                            <constraint firstItem="G9M-aM-oz8" firstAttribute="top" secondItem="9th-7u-0NH" secondAttribute="bottom" constant="254" id="Qtm-Lv-BKz"/>
                             <constraint firstItem="bva-Vz-zYG" firstAttribute="top" secondItem="b5Z-YS-sDL" secondAttribute="top" id="Vrk-1A-o87"/>
                             <constraint firstItem="bva-Vz-zYG" firstAttribute="leading" secondItem="PlX-Hj-NSe" secondAttribute="leading" id="WsB-Ey-aFl"/>
                             <constraint firstItem="G9M-aM-oz8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="b5Z-YS-sDL" secondAttribute="leading" constant="125" id="ZFV-rV-ZxD"/>
