@@ -12,12 +12,14 @@ final class LogInViewController: UIViewController {
     @IBOutlet var userNameTextField: UITextField!
     @IBOutlet var passwordTextField: UITextField!
     
-    let validUserName = "User"
-    let validPassword = "password"
+    private let validUserName = "User"
+    private let validPassword = "password"
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let greetingVC = segue.destination as? GreetingViewController
-        else { return }
+        else {
+            return
+        }
         greetingVC.enteredUserName = userNameTextField.text ?? ""
     }
     
@@ -28,9 +30,10 @@ final class LogInViewController: UIViewController {
     
     @IBAction func logInButtonTapped() {
         guard let userName = userNameTextField.text,
-              let password = passwordTextField.text
-        else { return }
-        if userName != validUserName || password != validPassword {
+              let password = passwordTextField.text,
+              userName == validUserName,
+              password == validPassword
+        else {
             showAlert(
                 title: "Invalid User Name or Password",
                 message: "Please enter correct User Name or password."
@@ -38,23 +41,28 @@ final class LogInViewController: UIViewController {
             passwordTextField.text = ""
             return
         }
-        performSegue(withIdentifier: "logIn", sender: nil)    }
+        performSegue(withIdentifier: "logIn", sender: nil)
+    }
     
     @IBAction func userNameReminderButtonTapped() {
         showAlert(
             title: "Your name is",
-            message: "\(validUserName)")
+            message: validUserName
+        )
     }
     
     @IBAction func passwordReminderButtonTapped() {
         showAlert(
             title: "Your password is",
-            message: "\(validPassword)"
+            message: validPassword
         )
     }
 }
 
 extension LogInViewController {
+    private func clearPassword() {
+        passwordTextField.text = ""
+    }
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(
             title: title,

@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -144,12 +145,12 @@
                         <viewLayoutGuide key="safeArea" id="PlX-Hj-NSe"/>
                         <color key="backgroundColor" red="0.81361818389999996" green="0.8121749922" blue="0.86078917980000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="G9M-aM-oz8" secondAttribute="trailing" constant="125" id="1NP-Gv-5tR"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="G9M-aM-oz8" secondAttribute="trailing" constant="100" id="1NP-Gv-5tR"/>
                             <constraint firstItem="9th-7u-0NH" firstAttribute="top" secondItem="PlX-Hj-NSe" secondAttribute="top" constant="80" id="J15-h2-V1L"/>
                             <constraint firstItem="G9M-aM-oz8" firstAttribute="top" secondItem="9th-7u-0NH" secondAttribute="bottom" constant="254" id="Qtm-Lv-BKz"/>
                             <constraint firstItem="bva-Vz-zYG" firstAttribute="top" secondItem="b5Z-YS-sDL" secondAttribute="top" id="Vrk-1A-o87"/>
                             <constraint firstItem="bva-Vz-zYG" firstAttribute="leading" secondItem="PlX-Hj-NSe" secondAttribute="leading" id="WsB-Ey-aFl"/>
-                            <constraint firstItem="G9M-aM-oz8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="b5Z-YS-sDL" secondAttribute="leading" constant="125" id="ZFV-rV-ZxD"/>
+                            <constraint firstItem="G9M-aM-oz8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="b5Z-YS-sDL" secondAttribute="leading" constant="100" id="ZFV-rV-ZxD"/>
                             <constraint firstAttribute="bottom" secondItem="bva-Vz-zYG" secondAttribute="bottom" id="aQL-Gz-npd"/>
                             <constraint firstItem="G9M-aM-oz8" firstAttribute="centerX" secondItem="b5Z-YS-sDL" secondAttribute="centerX" id="djP-7d-kcn"/>
                             <constraint firstItem="PlX-Hj-NSe" firstAttribute="trailing" secondItem="bva-Vz-zYG" secondAttribute="trailing" id="dsq-2q-ekr"/>
