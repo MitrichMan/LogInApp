@@ -16,8 +16,8 @@ final class LogInViewController: UIViewController {
     private let validPassword = "password"
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let greetingVC = segue.destination as? GreetingViewController
-        else {
+        let greetingVC = segue.destination
+        guard let greetingVC = greetingVC as? GreetingViewController else {
             return
         }
         greetingVC.enteredUserName = userNameTextField.text ?? ""
@@ -29,47 +29,40 @@ final class LogInViewController: UIViewController {
     }
     
     @IBAction func logInButtonTapped() {
-        guard let userName = userNameTextField.text,
-              let password = passwordTextField.text,
-              userName == validUserName,
-              password == validPassword
+        guard userNameTextField.text == validUserName,
+              passwordTextField.text == validPassword
         else {
             showAlert(
                 title: "Invalid User Name or Password",
-                message: "Please enter correct User Name or password."
+                message: "Please enter correct User Name or password.",
+                textField: passwordTextField
             )
-            passwordTextField.text = ""
             return
         }
         performSegue(withIdentifier: "logIn", sender: nil)
     }
     
-    @IBAction func userNameReminderButtonTapped() {
-        showAlert(
-            title: "Your name is",
-            message: validUserName
-        )
-    }
-    
-    @IBAction func passwordReminderButtonTapped() {
-        showAlert(
-            title: "Your password is",
-            message: validPassword
-        )
+    @IBAction func logInDataReminder(_ sender: UIButton) {
+        sender.tag == 0
+        ? showAlert(title: "Your name is", message: validUserName)
+        : showAlert(title: "Your password is", message: validPassword)
     }
 }
 
 extension LogInViewController {
-    private func clearPassword() {
-        passwordTextField.text = ""
-    }
-    private func showAlert(title: String, message: String) {
+    private func showAlert(
+        title: String,
+        message: String,
+        textField: UITextField? = nil
+    ) {
         let alert = UIAlertController(
             title: title,
             message: message,
             preferredStyle: .alert
         )
-        let okAction = UIAlertAction(title: "Ok", style: .default)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { _ in
+            textField?.text = ""
+        }
         alert.addAction(okAction)
         present(alert, animated: true)
     }
