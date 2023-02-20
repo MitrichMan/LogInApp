@@ -12,8 +12,8 @@ final class OccupationViewController: UIViewController {
     @IBOutlet var occupationImage: UIImageView!
     @IBOutlet var occupationLegendTextView: UITextView!
 
-    var occupationLegend = ""
-    var occupationPhoto = ""
+    var user: User!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ final class OccupationViewController: UIViewController {
             bottomColor: UIColor(named: "secondaryColor") ?? UIColor.systemBrown
             )
         
-        occupationLegendTextView.text = occupationLegend
-        occupationImage.image = UIImage(named: occupationPhoto)
+        occupationLegendTextView.text = Person.getPersonData().occupationLegend
+        occupationImage.image = UIImage(named: Person.getPersonData().images[1])
     }
 }

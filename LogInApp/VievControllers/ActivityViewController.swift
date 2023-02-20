@@ -14,11 +14,8 @@ final class ActivityViewController: UIViewController {
     @IBOutlet var firstActivityImage: UIImageView!
     @IBOutlet var secondActivityImage: UIImageView!
     
-    var ActivityLegend = ""
-    
-    var firstActivityPhoto = ""
-    var secondActivityPhoto = ""
-    
+    var user: User!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,9 +24,9 @@ final class ActivityViewController: UIViewController {
             bottomColor: UIColor(named: "secondaryColor") ?? UIColor.systemBrown
             )
 
-        activityTextView.text = ActivityLegend
+        activityTextView.text = Person.getPersonData().activityLegend
         
-        firstActivityImage.image = UIImage(named: firstActivityPhoto)
-        secondActivityImage.image = UIImage(named: secondActivityPhoto)
+        firstActivityImage.image = UIImage(named: Person.getPersonData().images[3])
+        secondActivityImage.image = UIImage(named: Person.getPersonData().images[4])
     }
   }

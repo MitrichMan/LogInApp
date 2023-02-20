@@ -12,8 +12,9 @@ final class CreationViewController: UIViewController {
     @IBOutlet var creationLegendTextView: UITextView!
     @IBOutlet var creationImage: UIImageView!
     
-    var creationLegend = ""
-    var creationPhoto = ""
+   
+    var user: User!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +24,7 @@ final class CreationViewController: UIViewController {
             bottomColor: UIColor(named: "secondaryColor") ?? UIColor.systemBrown
             )
         
-        creationLegendTextView.text = creationLegend
-        creationImage.image = UIImage(named: creationPhoto)
+        creationLegendTextView.text = Person.getPersonData().creationLegend
+        creationImage.image = UIImage(named: Person.getPersonData().images[2])
     }
 }

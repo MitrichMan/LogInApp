@@ -16,8 +16,8 @@ final class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userNameTextField.text = "User"
-        passwordTextField.text = "password"
+        userNameTextField.text = user.userName
+        passwordTextField.text = user.password
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -28,27 +28,17 @@ final class LogInViewController: UIViewController {
         
         viewControllers.forEach { viewController in
             if let greetingVC = viewController as? GreetingViewController {
-                greetingVC.nameOfUser = user.person.name
+                greetingVC.user = user
             } else if let occupationVC = viewController as? OccupationViewController {
-                occupationVC.occupationLegend = user.person.occupationLegend
-                occupationVC.occupationPhoto = user.person.images[1]
+                occupationVC.user = user
             } else if let creationVC = viewController as? CreationViewController {
-                creationVC.creationLegend = user.person.creationLegend
-                creationVC.creationPhoto = user.person.images[2]
+                creationVC.user = user
             } else if let activityVC = viewController as? ActivityViewController {
-                activityVC.ActivityLegend = user.person.activityLegend
-                activityVC.firstActivityPhoto = user.person.images[3]
-                activityVC.secondActivityPhoto = user.person.images[4]
+
+                activityVC.user = user
             } else if let navigationVC = viewController as? UINavigationController {
                 if let aboutMeVC = navigationVC.topViewController as? AboutMeViewController {
-                    aboutMeVC.name = user.person.name
-                    aboutMeVC.dateOfBirth = user.person.dateOfBirth
-                    aboutMeVC.city = user.person.city
-                    aboutMeVC.sex = user.person.sex
-                    aboutMeVC.status = user.person.status
-                    aboutMeVC.occupation = user.person.occupation
-                    aboutMeVC.bioLegend = user.person.bioLegend
-                    aboutMeVC.aboutMePhoto = user.person.images[0]
+                    aboutMeVC.user = user                 
                 }
             }
         }

@@ -11,8 +11,8 @@ final class GreetingViewController: UIViewController {
         
     @IBOutlet var welcomeLabel: UILabel!
     
-    var nameOfUser = ""
-            
+    var user: User!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +21,6 @@ final class GreetingViewController: UIViewController {
             bottomColor: UIColor(named: "secondaryColor") ?? UIColor.systemBrown
             )
         
-        welcomeLabel.text = "Добро пожаловать, \(nameOfUser)"
+        welcomeLabel.text = "Добро пожаловать, \(Person.getPersonData().name)"
     }
 }

@@ -11,7 +11,8 @@ final class BioViewController: UIViewController {
 
     @IBOutlet var bioLegendLabel: UILabel!
     
-    var bioLegend = ""
+    var user: User!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,6 @@ final class BioViewController: UIViewController {
             bottomColor: UIColor(named: "secondaryColor") ?? UIColor.systemBrown
             )
         
-        bioLegendLabel.text = bioLegend
+        bioLegendLabel.text = Person.getPersonData().bioLegend
     }
 }
