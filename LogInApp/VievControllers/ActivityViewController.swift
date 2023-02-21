@@ -10,7 +10,7 @@ import UIKit
 final class ActivityViewController: UIViewController {
     
     @IBOutlet var activityImageViews: [UIImageView]!
-//
+
     @IBOutlet var legendTextView: UITextView!
 
     var user: User!
@@ -31,20 +31,16 @@ final class ActivityViewController: UIViewController {
             )
 
         imageNames = getImageName(viewController: viewControllerIdentifier)
-        getActivityImages(from: imageNames)
+        getActivityImages(for: activityImageViews, with: imageNames)
         
         legendTextView.text = getLegend(for: viewControllerIdentifier)
 
     }
     
-    private func getActivityImages(from names: [String]) {
-        for name in names {
-            for activityImageView in activityImageViews {
-                if activityImageView.image == nil {
-                    activityImageView.image = UIImage(named: name)
-                    break
-                }
-            }
+    private func getActivityImages(for imageViews: [UIImageView], with names: [String]) {
+        for index in 0..<imageViews.count {
+            guard index < names.count else { return }
+            imageViews[index].image = UIImage(named: names[index])
         }
     }
 }
