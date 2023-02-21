@@ -18,13 +18,12 @@ final class AboutMeViewController: UIViewController {
     @IBOutlet var statusLabel: UILabel!
     @IBOutlet var occupationLabel: UILabel!
 
-    
     var user: User!
     
-    private var aboutMePhoto = {
-
-    }
+    private let viewControllerIdentifier = ViewControllerIdentifier.aboutMe
     
+    private var imageNames = [""]
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,19 +32,29 @@ final class AboutMeViewController: UIViewController {
             bottomColor: UIColor(named: "secondaryColor") ?? UIColor.systemBrown
         )
         
+        imageNames = getImageName(viewController: viewControllerIdentifier)
+        aboutMeImage.image = getImage(from: imageNames)
+                
         nameLabel.text = Person.getPersonData().name
         dateOfBirthLabel.text = Person.getPersonData().dateOfBirth
         cityLabel.text = Person.getPersonData().city
         sexLabel.text = Person.getPersonData().sex
         statusLabel.text = Person.getPersonData().status
         occupationLabel.text = Person.getPersonData().occupation
-        
-        aboutMeImage.image = UIImage(named: Person.getPersonData().images[0])
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let bioVC = segue.destination as? BioViewController else {
             return
         }
         bioVC.user = user
+    }
+    
+    private func getImage(from names: [String]) -> UIImage {
+        var image = UIImage()
+        for name in names {
+            image = UIImage(named: name)!
+        }
+        return image
     }
 }

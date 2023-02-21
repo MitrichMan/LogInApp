@@ -9,10 +9,11 @@ import UIKit
 
 final class BioViewController: UIViewController {
 
-    @IBOutlet var bioLegendLabel: UILabel!
-    
+    @IBOutlet var legendTextView: UITextView!
+        
     var user: User!
 
+    private let viewControllerIdentifier = ViewControllerIdentifier.bio
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,6 @@ final class BioViewController: UIViewController {
             bottomColor: UIColor(named: "secondaryColor") ?? UIColor.systemBrown
             )
         
-        bioLegendLabel.text = Person.getPersonData().bioLegend
+        legendTextView.text = getLegend(for: viewControllerIdentifier)
     }
 }

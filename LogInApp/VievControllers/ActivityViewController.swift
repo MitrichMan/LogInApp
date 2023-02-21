@@ -9,13 +9,17 @@ import UIKit
 
 final class ActivityViewController: UIViewController {
     
-    @IBOutlet var activityTextView: UITextView!
-    
     @IBOutlet var firstActivityImage: UIImageView!
     @IBOutlet var secondActivityImage: UIImageView!
-    
+        
+    @IBOutlet var legendTextView: UITextView!
+
     var user: User!
 
+    private let viewControllerIdentifier = ViewControllerIdentifier.activity
+    
+    private var imageNames = [""]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,9 +28,16 @@ final class ActivityViewController: UIViewController {
             bottomColor: UIColor(named: "secondaryColor") ?? UIColor.systemBrown
             )
 
-        activityTextView.text = Person.getPersonData().activityLegend
+        imageNames = getImageName(viewController: viewControllerIdentifier)
+        getActivityImages(from: imageNames)
         
-        firstActivityImage.image = UIImage(named: Person.getPersonData().images[3])
-        secondActivityImage.image = UIImage(named: Person.getPersonData().images[4])
+        legendTextView.text = getLegend(for: viewControllerIdentifier)
+
+    }
+    
+    private func getActivityImages(from names: [String]) {
+        var names = names
+        firstActivityImage.image = UIImage(named: names.removeFirst())
+        secondActivityImage.image = UIImage(named: names.removeFirst())
     }
   }

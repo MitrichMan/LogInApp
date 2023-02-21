@@ -16,7 +16,7 @@ final class LogInViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        userNameTextField.text = user.userName
+        userNameTextField.text = user.logIn
         passwordTextField.text = user.password
     }
     
@@ -50,7 +50,7 @@ final class LogInViewController: UIViewController {
     }
     
     @IBAction func logInButtonTapped() {
-        guard userNameTextField.text == user.userName,
+        guard userNameTextField.text == user.logIn,
               passwordTextField.text == user.password
         else {
             showAlert(
@@ -65,11 +65,12 @@ final class LogInViewController: UIViewController {
     
     @IBAction func logInDataReminder(_ sender: UIButton) {
         sender.tag == 0
-        ? showAlert(title: "Your name is", message: user.userName)
+        ? showAlert(title: "Your name is", message: user.logIn)
         : showAlert(title: "Your password is", message: user.password)
     }
 }
 
+//: MARK - Extension for alert controller
 extension LogInViewController {
     private func showAlert(
         title: String,
@@ -89,6 +90,7 @@ extension LogInViewController {
     }
 }
 
+//: MARK - Extension for hiding keyboard
 extension LogInViewController: UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)

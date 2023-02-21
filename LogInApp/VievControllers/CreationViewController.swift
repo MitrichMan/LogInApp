@@ -9,12 +9,14 @@ import UIKit
 
 final class CreationViewController: UIViewController {
 
-    @IBOutlet var creationLegendTextView: UITextView!
     @IBOutlet var creationImage: UIImageView!
-    
-   
+    @IBOutlet var legendTextView: UITextView!
+       
     var user: User!
 
+    private let viewControllerIdentifier = ViewControllerIdentifier.creation
+    
+    private var imageNames = [""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,7 +26,17 @@ final class CreationViewController: UIViewController {
             bottomColor: UIColor(named: "secondaryColor") ?? UIColor.systemBrown
             )
         
-        creationLegendTextView.text = Person.getPersonData().creationLegend
-        creationImage.image = UIImage(named: Person.getPersonData().images[2])
+        imageNames = getImageName(viewController: viewControllerIdentifier)
+        creationImage.image = getImage(from: imageNames)
+        
+        legendTextView.text = getLegend(for: viewControllerIdentifier)
+    }
+    
+    private func getImage(from names: [String]) -> UIImage {
+        var image = UIImage()
+        for name in names {
+            image = UIImage(named: name)!
+        }
+        return image
     }
 }

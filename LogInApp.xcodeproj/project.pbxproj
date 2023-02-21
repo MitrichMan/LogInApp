@@ -14,6 +14,9 @@
 		4D083750299E60BD0033A5FA /* CreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D08374F299E60BD0033A5FA /* CreationViewController.swift */; };
 		4D083752299E615B0033A5FA /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D083751299E615B0033A5FA /* ActivityViewController.swift */; };
 		4D0CF568299F3EFA00AB65D6 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D0CF567299F3EFA00AB65D6 /* Gradient.swift */; };
+		4D117E0029A4B31100379F95 /* GetLegend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D117DFF29A4B31100379F95 /* GetLegend.swift */; };
+		4D117E0229A4BC0E00379F95 /* ViewControllerIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D117E0129A4BC0E00379F95 /* ViewControllerIdentifier.swift */; };
+		4D117E0429A4C4F700379F95 /* GetImageName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D117E0329A4C4F700379F95 /* GetImageName.swift */; };
 		4D7C791F299F878D004E12FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4D7C791E299F878D004E12FC /* Assets.xcassets */; };
 		4DDF7880299A295E00982BC4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF787F299A295E00982BC4 /* AppDelegate.swift */; };
 		4DDF7882299A295E00982BC4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DDF7881299A295E00982BC4 /* SceneDelegate.swift */; };
@@ -31,6 +34,9 @@
 		4D08374F299E60BD0033A5FA /* CreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreationViewController.swift; sourceTree = "<group>"; };
 		4D083751299E615B0033A5FA /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		4D0CF567299F3EFA00AB65D6 /* Gradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
+		4D117DFF29A4B31100379F95 /* GetLegend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLegend.swift; sourceTree = "<group>"; };
+		4D117E0129A4BC0E00379F95 /* ViewControllerIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerIdentifier.swift; sourceTree = "<group>"; };
+		4D117E0329A4C4F700379F95 /* GetImageName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageName.swift; sourceTree = "<group>"; };
 		4D7C791E299F878D004E12FC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4DDF787C299A295E00982BC4 /* LogInApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LogInApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DDF787F299A295E00982BC4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				4D083743299E602B0033A5FA /* User.swift */,
+				4D117E0129A4BC0E00379F95 /* ViewControllerIdentifier.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -65,6 +72,8 @@
 			isa = PBXGroup;
 			children = (
 				4D0CF567299F3EFA00AB65D6 /* Gradient.swift */,
+				4D117DFF29A4B31100379F95 /* GetLegend.swift */,
+				4D117E0329A4C4F700379F95 /* GetImageName.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -207,7 +216,10 @@
 				4DDF7884299A295E00982BC4 /* LogInViewController.swift in Sources */,
 				4DDF7880299A295E00982BC4 /* AppDelegate.swift in Sources */,
 				4DDF7882299A295E00982BC4 /* SceneDelegate.swift in Sources */,
+				4D117E0229A4BC0E00379F95 /* ViewControllerIdentifier.swift in Sources */,
+				4D117E0029A4B31100379F95 /* GetLegend.swift in Sources */,
 				4D083749299E606D0033A5FA /* AboutMeViewController.swift in Sources */,
+				4D117E0429A4C4F700379F95 /* GetImageName.swift in Sources */,
 				4D083750299E60BD0033A5FA /* CreationViewController.swift in Sources */,
 				4D083744299E602B0033A5FA /* User.swift in Sources */,
 				4D0CF568299F3EFA00AB65D6 /* Gradient.swift in Sources */,

@@ -10,10 +10,13 @@ import UIKit
 final class OccupationViewController: UIViewController {
     
     @IBOutlet var occupationImage: UIImageView!
-    @IBOutlet var occupationLegendTextView: UITextView!
-
+    @IBOutlet var legendTextView: UITextView!
+    
     var user: User!
 
+    private let viewControllerIdentifier = ViewControllerIdentifier.occupation
+    
+    private var imageNames = [""]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +26,17 @@ final class OccupationViewController: UIViewController {
             bottomColor: UIColor(named: "secondaryColor") ?? UIColor.systemBrown
             )
         
-        occupationLegendTextView.text = Person.getPersonData().occupationLegend
-        occupationImage.image = UIImage(named: Person.getPersonData().images[1])
+        imageNames = getImageName(viewController: viewControllerIdentifier)
+        occupationImage.image = getImage(from: imageNames)
+        
+        legendTextView.text = getLegend(for: viewControllerIdentifier)
+    }
+    
+    private func getImage(from names: [String]) -> UIImage {
+        var image = UIImage()
+        for name in names {
+            image = UIImage(named: name)!
+        }
+        return image
     }
 }

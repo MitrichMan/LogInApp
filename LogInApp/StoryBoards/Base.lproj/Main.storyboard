@@ -355,24 +355,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Biography" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Grz-eh-ySS">
-                                <rect key="frame" x="16" y="44" width="288" height="20.5"/>
+                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" editable="NO" text="Bio" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEf-t9-VeJ">
+                                <rect key="frame" x="16" y="44" width="288" height="455"/>
+                                <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="FNc-KY-UcI"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="FNc-KY-UcI" firstAttribute="trailing" secondItem="Grz-eh-ySS" secondAttribute="trailing" constant="16" id="5PT-zT-V78"/>
-                            <constraint firstItem="Grz-eh-ySS" firstAttribute="top" secondItem="FNc-KY-UcI" secondAttribute="top" id="YMx-cT-Cuc"/>
-                            <constraint firstItem="Grz-eh-ySS" firstAttribute="leading" secondItem="FNc-KY-UcI" secondAttribute="leading" constant="16" id="dAS-cB-tzi"/>
+                            <constraint firstItem="FNc-KY-UcI" firstAttribute="bottom" secondItem="sEf-t9-VeJ" secondAttribute="bottom" constant="20" id="OOy-F8-7uB"/>
+                            <constraint firstItem="FNc-KY-UcI" firstAttribute="trailing" secondItem="sEf-t9-VeJ" secondAttribute="trailing" constant="16" id="QpC-n4-rWS"/>
+                            <constraint firstItem="sEf-t9-VeJ" firstAttribute="top" secondItem="FNc-KY-UcI" secondAttribute="top" id="SfC-kc-Ad9"/>
+                            <constraint firstItem="sEf-t9-VeJ" firstAttribute="leading" secondItem="FNc-KY-UcI" secondAttribute="leading" constant="16" id="Zb9-RQ-0yy"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4lW-ZJ-aR5"/>
                     <connections>
-                        <outlet property="bioLegendLabel" destination="Grz-eh-ySS" id="aVw-Jb-UzW"/>
+                        <outlet property="legendTextView" destination="sEf-t9-VeJ" id="kUu-uI-XLb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FkI-dG-r53" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -420,8 +422,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" tag="1" title="Occupation" image="hammer.fill" catalog="system" id="zp7-sT-3Uv"/>
                     <connections>
+                        <outlet property="legendTextView" destination="wwZ-9t-FRf" id="ubW-VM-F1N"/>
                         <outlet property="occupationImage" destination="p51-du-nlf" id="Rsm-ZM-f78"/>
-                        <outlet property="occupationLegendTextView" destination="wwZ-9t-FRf" id="ubW-VM-F1N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2e0-GV-wQb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -470,7 +472,7 @@
                     <tabBarItem key="tabBarItem" tag="2" title="Creation" image="music.quarternote.3" catalog="system" id="1Dt-k5-toy"/>
                     <connections>
                         <outlet property="creationImage" destination="PuZ-vo-5N2" id="aSs-sR-C11"/>
-                        <outlet property="creationLegendTextView" destination="7lB-jf-Zvc" id="8vW-jD-xxg"/>
+                        <outlet property="legendTextView" destination="7lB-jf-Zvc" id="8vW-jD-xxg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nnP-Fa-gDl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -533,8 +535,8 @@
                     </view>
                     <tabBarItem key="tabBarItem" tag="3" title="Activity" image="figure.snowboarding" catalog="system" id="tnb-dM-9Ky"/>
                     <connections>
-                        <outlet property="activityTextView" destination="q7e-dA-7zp" id="ejx-1H-e1i"/>
                         <outlet property="firstActivityImage" destination="L6S-Hj-MUF" id="Qck-Dd-ert"/>
+                        <outlet property="legendTextView" destination="q7e-dA-7zp" id="ejx-1H-e1i"/>
                         <outlet property="secondActivityImage" destination="OGa-we-79N" id="uNz-Ed-rur"/>
                     </connections>
                 </viewController>
