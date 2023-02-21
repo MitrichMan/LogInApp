@@ -535,9 +535,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" tag="3" title="Activity" image="figure.snowboarding" catalog="system" id="tnb-dM-9Ky"/>
                     <connections>
-                        <outlet property="firstActivityImage" destination="L6S-Hj-MUF" id="Qck-Dd-ert"/>
                         <outlet property="legendTextView" destination="q7e-dA-7zp" id="ejx-1H-e1i"/>
-                        <outlet property="secondActivityImage" destination="OGa-we-79N" id="uNz-Ed-rur"/>
+                        <outletCollection property="activityImageViews" destination="L6S-Hj-MUF" collectionClass="NSMutableArray" id="XmW-fD-jak"/>
+                        <outletCollection property="activityImageViews" destination="OGa-we-79N" collectionClass="NSMutableArray" id="iMG-4J-INx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SAJ-Cm-BiO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

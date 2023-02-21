@@ -70,7 +70,7 @@ final class LogInViewController: UIViewController {
     }
 }
 
-//: MARK - Extension for alert controller
+// MARK: - Extension for alert controller
 extension LogInViewController {
     private func showAlert(
         title: String,
@@ -90,7 +90,7 @@ extension LogInViewController {
     }
 }
 
-//: MARK - Extension for hiding keyboard
+// MARK: - Extension for hiding keyboard
 extension LogInViewController: UITextFieldDelegate {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)

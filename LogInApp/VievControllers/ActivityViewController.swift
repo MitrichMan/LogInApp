@@ -9,13 +9,15 @@ import UIKit
 
 final class ActivityViewController: UIViewController {
     
-    @IBOutlet var firstActivityImage: UIImageView!
-    @IBOutlet var secondActivityImage: UIImageView!
-        
+    @IBOutlet var activityImageViews: [UIImageView]!
+//
     @IBOutlet var legendTextView: UITextView!
 
     var user: User!
-
+    
+    
+    
+    
     private let viewControllerIdentifier = ViewControllerIdentifier.activity
     
     private var imageNames = [""]
@@ -36,8 +38,13 @@ final class ActivityViewController: UIViewController {
     }
     
     private func getActivityImages(from names: [String]) {
-        var names = names
-        firstActivityImage.image = UIImage(named: names.removeFirst())
-        secondActivityImage.image = UIImage(named: names.removeFirst())
+        for name in names {
+            for activityImageView in activityImageViews {
+                if activityImageView.image == nil {
+                    activityImageView.image = UIImage(named: name)
+                    break
+                }
+            }
+        }
     }
-  }
+}

@@ -49,12 +49,4 @@ final class AboutMeViewController: UIViewController {
         }
         bioVC.user = user
     }
-    
-    private func getImage(from names: [String]) -> UIImage {
-        var image = UIImage()
-        for name in names {
-            image = UIImage(named: name)!
-        }
-        return image
-    }
 }
